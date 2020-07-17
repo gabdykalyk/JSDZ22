@@ -112,6 +112,94 @@ function songList() {
 songList()
 
 // TASK 7
+let camaro = {
+    name: 'Camaro',
+    year: 2012,
+    weight: 1500,
+    engine: 2,
+    transmission: 'auto',
+    wheelDrive: 'back',
+    seats: 4,
+    tankVolume: 72,
+    clearance: 127,
+    cabriolet: false,
+    image: '<img style="width:300px" src="https://cnet2.cbsistatic.com/img/_QfcIuGXIft53H15HTs88NN7CDA=/1200x675/2012/08/20/567a53dd-bb76-11e2-8a8e-0291187978f3/35414242_OVR.jpg">'
+}
+
+let teslaX = {
+    name: 'TeslaX',
+    year: 2015,
+    weight: 2350,
+    transmission: 'reductor',
+    wheelDrive: 'full',
+    seats: 5,
+    clearance: 175,
+    cabriolet: false,
+    image: '<img style="width:300px" src="https://static.carsdn.co/cldstatic/wp-content/uploads/19-tesla-model-x-2018-angle--doors--exterior--front--grey.jpg">'
+}
+
+let mini = {
+    name: 'Mini',
+    year: 2014,
+    weight: 1440,
+    engine: 1.5,
+    transmission: 'manual',
+    wheelDrive: 'front',
+    seats: 5,
+    tankVolume: 51,
+    clearance: 165,
+    cabriolet: false,
+    image: '<img style="width:300px" src="https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/long-term-review/legacy/1-mini-5dr-cooper-s-2019-lt-hero-front.jpg">'
+}
+
+let mustang = {
+    name: 'Mustang',
+    year: 2017,
+    weight: 1900,
+    engine: 1.5,
+    transmission: 'manual',
+    wheelDrive: 'front',
+    seats: 4,
+    tankVolume: 51,
+    clearance: 165,
+    cabriolet: true,
+    image: '<img style="width:300px" src="https://i.ytimg.com/vi/bg5Ct_EPUcw/maxresdefault.jpg">'
+}
+
+let lamborghini = {
+    name: 'Lamborghini',
+    year: 2016,
+    weight: 1500,
+    engine: 5.2,
+    transmission: 'robot',
+    wheelDrive: 'full',
+    seats: 2,
+    tankVolume: 80,
+    clearance: 100,
+    cabriolet: true,
+    image: '<img style="width:300px" src="https://media.ed.edmunds-media.com/lamborghini/huracan/2018/oem/2018_lamborghini_huracan_convertible_performante-spyder_fq_oem_2_500.jpg">'
+}
+
+let cars = [camaro, teslaX, mini, mustang, lamborghini]
+function car() {
+    let carsName;
+    let carsYear;
+    let newList = document.createElement('ol')
+    let li;
+    document.body.append(newList)
+    for (let i = 0; i < cars.length; i++) {
+        li = document.createElement('li');
+        let list = '';
+        for (key in cars[i]) {
+            if (cars[i][key] && cars[i][key] !== true) {
+                carsName = cars[i][key]
+                list += `${cars[i][key]} <br>`
+            }
+        }
+        li.innerHTML = list
+        newList.append(li)
+    } 
+    }
 
 
-
+car()
